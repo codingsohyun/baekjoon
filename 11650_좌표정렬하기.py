@@ -16,4 +16,3 @@ s_array = sorted(array) #배열 요소 정렬
 
 for i in range(N):
     print(s_array[i][0], s_array[i][1])
-
