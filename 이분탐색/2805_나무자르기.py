@@ -2,18 +2,23 @@ import sys
 input = sys.stdin.readline
 
 N, M = map(int, input().split())
-tree = list(map(int, input().split()))
-# print(tree)
+tree_list = [int(N) for N in input().split()]
 
-def bs(arr, tar, start, end):
-    if start > end:
-        return None
+start = 0
+end = max(tree_list)
 
-    mid = (start + end) // 2
-    if arr[mid] == tar:
-        return mid
-    elif arr[mid] > tar:
-        return bs(arr, tar, start, mid-1)
+result = 0
+while (start <= end):
+    total = 0
+    mid = (start+end)//2
+    for x in tree_list:
+        if x>mid:
+            total += x-mid
+    if total < M:
+        end = mid-1
     else:
-        return bs(arr, tar, mid+1, end)
+        result = mid
+        start = mid + 1
+
+print(result)
 
