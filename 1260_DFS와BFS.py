@@ -28,7 +28,6 @@ def bfs(graph, start, visited):
                 queue.append(i)
                 visited[i] = True
 
-
 n, m, v = map(int, input().split())
 
 # 인접 리스트 연결 시키긴 그래프 만들기

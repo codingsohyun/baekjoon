@@ -11,11 +11,14 @@ for i in range(n):
         stack.append(now)
         ans.append('+')
         now += 1
+    # print(stack)
+    # print(ans)
     if stack[-1] == num:
         stack.pop()
         ans.append('-')
     else:
         find = False
+    # print(ans)
 
 if not find:
     print('NO')
